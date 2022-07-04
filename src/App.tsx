@@ -1,11 +1,16 @@
 import React from "react";
+import Home from "./pages/Home";
+import { ThemeProvider } from "styled-components";
+import theme from "./global/theme";
 
-function App() {
+const App: React.FunctionComponent = () => {
   return (
-    <div className="App">
-      <p>Teste</p>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Home />
+      </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
