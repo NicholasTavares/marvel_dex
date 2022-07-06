@@ -3,7 +3,7 @@ import media from "styled-media-query";
 
 export const HeaderContainer = styled.header`
   height: 70vh;
-  padding: 1rem;
+  padding: 1.2rem;
   flex-direction: column;
   background-color: ${({theme}) => theme.colors.dark};
   position: relative;
