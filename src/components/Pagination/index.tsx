@@ -1,6 +1,6 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
-import ICharactersResponse from "../../pages/Home/interfaces";
+import { ICharactersResponse } from "../../pages/Home/interfaces";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { StyledPaginateContainer } from "./styles";
 
