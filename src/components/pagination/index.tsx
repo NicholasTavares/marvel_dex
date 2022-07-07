@@ -30,7 +30,7 @@ const Pagination: React.FunctionComponent<IPaginationProps> = ({
   React.useEffect(() => {
     setPageCount(Math.ceil(charactersCount / itemsPerPage));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itemOffset, itemsPerPage]);
+  }, [itemOffset, itemsPerPage, charactersCount]);
 
   return (
     <StyledPaginateContainer>
