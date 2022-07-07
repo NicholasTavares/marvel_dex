@@ -4,7 +4,7 @@ import FormSearch from "../../components/Form";
 import Pagination from "../../components/pagination";
 import Header from "../../layout/header";
 import { api } from "../../services/api";
-import ICharactersResponse from "./interfaces";
+import { ICharactersResponse, IParams } from "./interfaces";
 import {
   Characters,
   GridCharacters,
@@ -12,13 +12,6 @@ import {
   Title,
   TitleContainer,
 } from "./styles";
-
-interface IParams {
-  orderBy: string;
-  limit: number;
-  offset: number;
-  nameStartsWith?: string;
-}
 
 const Home: React.FunctionComponent = () => {
   const [characters, setCharacters] = React.useState<ICharactersResponse[]>([]);

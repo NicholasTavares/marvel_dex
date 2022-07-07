@@ -48,7 +48,7 @@ interface IURL {
   url: string;
 }
 
-export default interface ICharactersResponse {
+export interface ICharactersResponse {
   comics: IComics;
   description: string;
   events: IEvents;
@@ -63,4 +63,11 @@ export default interface ICharactersResponse {
     path: string;
   };
   urls: IURL[];
+}
+
+export interface IParams {
+  orderBy: string;
+  limit: number;
+  offset: number;
+  nameStartsWith?: string;
 }
