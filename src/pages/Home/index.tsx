@@ -1,7 +1,9 @@
 import React from "react";
 import CharacterCard from "../../components/CharacterCard";
+import Pagination from "../../components/pagination";
 import Header from "../../layout/header";
 import { api } from "../../services/api";
+import ICharactersResponse from "./interfaces";
 import {
   Characters,
   GridCharacters,
@@ -10,75 +12,11 @@ import {
   TitleContainer,
 } from "./styles";
 
-interface IItemsComics {
-  name: string;
-  resourceURI: string;
-}
-
-interface IComics {
-  available: number;
-  collectionURI: string;
-  items: IItemsComics[];
-}
-
-interface IItemsEvents {
-  name: string;
-  resourceURI: string;
-}
-
-interface IEvents {
-  available: number;
-  collectionURI: string;
-  items: IItemsEvents[];
-}
-
-interface IItemsSeries {
-  name: string;
-  resourceURI: string;
-}
-
-interface ISeries {
-  available: number;
-  collectionURI: string;
-  items: IItemsSeries[];
-}
-
-interface IItemsStories {
-  name: string;
-  resourceURI: string;
-  type: string;
-}
-
-interface IStories {
-  available: number;
-  collectionURI: string;
-  items: IItemsStories[];
-}
-
-interface IURL {
-  type: string;
-  url: string;
-}
-
-interface ICharactersResponse {
-  comics: IComics;
-  description: string;
-  events: IEvents;
-  id: number;
-  modified: string;
-  name: string;
-  resourceURI: string;
-  series: ISeries;
-  stories: IStories;
-  thumbnail: {
-    extension: string;
-    path: string;
-  };
-  urls: IURL[];
-}
-
 const Home: React.FunctionComponent = () => {
   const [characters, setCharacters] = React.useState<ICharactersResponse[]>([]);
+  const [charactersCount, setCharactersCount] = React.useState(0);
+  const [itemOffset, setItemOffset] = React.useState(0);
+  const LIMIT = 10;
 
   React.useEffect(() => {
     async function getCharacters() {
@@ -86,14 +24,20 @@ const Home: React.FunctionComponent = () => {
         .get(`/characters`, {
           params: {
             orderBy: "name",
+            limit: 10,
+            offset: itemOffset,
           },
         })
-        .then((response) => setCharacters(response.data.data.results))
+        .then((response) => {
+          setCharacters(response.data.data.results);
+          setCharactersCount(response.data.data.total);
+        })
         .catch((err) => console.log(err));
     }
 
     getCharacters();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itemOffset]);
 
   return (
     <HomeContainer>
@@ -119,6 +63,15 @@ const Home: React.FunctionComponent = () => {
               />
             ))}
         </GridCharacters>
+        {characters.length > 0 && (
+          <Pagination
+            initialResponse={characters}
+            itemsPerPage={LIMIT}
+            charactersCount={charactersCount}
+            itemOffset={itemOffset}
+            setItemOffset={setItemOffset}
+          />
+        )}
       </Characters>
     </HomeContainer>
   );

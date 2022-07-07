@@ -10,6 +10,7 @@ export const Characters = styled.section`
   margin-top: -25vh;
   padding: 12rem 1.2rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   background-color: ${({theme}) => theme.colors.marvel_red};
 `
