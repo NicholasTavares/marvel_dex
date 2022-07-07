@@ -1,5 +1,6 @@
 import React from "react";
 import CharacterCard from "../../components/CharacterCard";
+import FormSearch from "../../components/Form";
 import Pagination from "../../components/pagination";
 import Header from "../../layout/header";
 import { api } from "../../services/api";
@@ -12,21 +13,33 @@ import {
   TitleContainer,
 } from "./styles";
 
+interface IParams {
+  orderBy: string;
+  limit: number;
+  offset: number;
+  nameStartsWith?: string;
+}
+
 const Home: React.FunctionComponent = () => {
   const [characters, setCharacters] = React.useState<ICharactersResponse[]>([]);
-  const [charactersCount, setCharactersCount] = React.useState(0);
-  const [itemOffset, setItemOffset] = React.useState(0);
+  const [charactersCount, setCharactersCount] = React.useState<number>(0);
+  const [itemOffset, setItemOffset] = React.useState<number>(0);
+  const [text, setText] = React.useState<string>("");
   const LIMIT = 10;
 
   React.useEffect(() => {
     async function getCharacters() {
+      const params: IParams = {
+        orderBy: "name",
+        limit: LIMIT,
+        offset: itemOffset,
+      };
+      if (text) {
+        params.nameStartsWith = text;
+      }
       await api
         .get(`/characters`, {
-          params: {
-            orderBy: "name",
-            limit: 10,
-            offset: itemOffset,
-          },
+          params,
         })
         .then((response) => {
           setCharacters(response.data.data.results);
@@ -37,7 +50,7 @@ const Home: React.FunctionComponent = () => {
 
     getCharacters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itemOffset]);
+  }, [itemOffset, text]);
 
   return (
     <HomeContainer>
@@ -46,6 +59,7 @@ const Home: React.FunctionComponent = () => {
         <TitleContainer>
           <Title>Characters</Title>
         </TitleContainer>
+        <FormSearch setText={setText} />
         <GridCharacters>
           {characters.length > 0 &&
             characters.map((character) => (
