@@ -1,8 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import {Link} from "react-router-dom";
 
 interface IBackground {
   url: string
 }
+
+// ANIMATION
+const UpDown = keyframes`  
+  from { transform: translateY(-10%); }
+  to { transform: translateY(10%); }
+`;
 
 export const Card = styled.div`
   cursor: pointer;
@@ -72,19 +79,47 @@ export const CardBack = styled.div<IBackground>`
 
 export const ContainerTitle = styled.div`
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.8rem;
 `
 
 export const Title = styled.h3`
   font-size: 1.6rem;
   letter-spacing: 1px;
-  margin: 0.6rem;
+  margin: 0;
+  padding: 0;
   text-shadow: 
                -1px -1px 0px #202020, 
                -1px 1px 0px #202020,                    
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
   color: ${({theme}) => theme.colors.light};
+`
+
+export const DetailLink = styled(Link)`
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({theme}) => theme.colors.light};
+  border: 1px solid ${({theme}) => theme.colors.dark};
+  border-radius: 50%;
+  animation-name: ${UpDown};
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+
+  &:hover > svg {
+    color: ${({theme}) => theme.colors.marvel_red};
+  }
+
+  & > svg {
+    font-size: 1.5rem;
+  }
 `
 
 export const ContainerInformation = styled.div`

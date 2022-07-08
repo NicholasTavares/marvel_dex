@@ -1,4 +1,5 @@
 import React from "react";
+import { CgDetailsMore } from "react-icons/cg";
 import {
   Card,
   CardBack,
@@ -6,11 +7,13 @@ import {
   CharacterInformation,
   ContainerInformation,
   ContainerTitle,
+  DetailLink,
   Title,
 } from "./styles";
 
 interface ICharacter {
   name: string;
+  id: number;
   img_url: string;
   series: string;
   comics: string;
@@ -21,6 +24,7 @@ interface ICharacter {
 
 const CharacterCard: React.FunctionComponent<ICharacter> = ({
   name,
+  id,
   img_url,
   series,
   comics,
@@ -43,6 +47,9 @@ const CharacterCard: React.FunctionComponent<ICharacter> = ({
       <CardBack url={img_url}>
         <ContainerTitle>
           <Title>More Information</Title>
+          <DetailLink to={`/details/${id}`}>
+            <CgDetailsMore />
+          </DetailLink>
         </ContainerTitle>
         <ContainerInformation>
           <CharacterInformation>

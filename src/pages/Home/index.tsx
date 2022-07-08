@@ -116,6 +116,7 @@ const Home: React.FunctionComponent = () => {
               <CharacterCard
                 key={character.id}
                 name={character.name}
+                id={character.id}
                 img_url={
                   character.thumbnail.path + "." + character.thumbnail.extension
                 }
