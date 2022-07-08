@@ -92,3 +92,21 @@ export interface IEventsResponse {
   };
   title: string;
 }
+
+export interface ICreatorsResponse {
+  fullName: string;
+  id: number;
+  thumbnail: {
+    extension: string;
+    path: string;
+  };
+  comics: {
+    available: number;
+  };
+  series: {
+    available: number;
+  };
+  stories: {
+    available: number;
+  };
+}
