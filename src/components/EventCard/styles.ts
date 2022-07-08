@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 interface IBackground {
   url: string
@@ -11,10 +12,14 @@ export const Card = styled.div`
   position: relative;
   height: 15rem;
   width: 100%;
+
+  ${media.greaterThan("large")`
+    height: 20rem;
+  `}
 `
 
 export const CardFront = styled.div<IBackground>`
-  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 20%);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 25%);
   background-image: url(${(props) => props.url});
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -41,7 +46,7 @@ export const CardFront = styled.div<IBackground>`
 `
 
 export const CardBack = styled.div<IBackground>`
-  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 20%);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 25%);
   background-image: url(${(props) => props.url});
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -73,29 +78,45 @@ export const CardBack = styled.div<IBackground>`
 export const ContainerTitle = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 0.8rem;
+
+  ${media.greaterThan("large")`
+    margin: 1rem;
+  `}
 `
 
 export const Title = styled.h3`
   font-size: 1.6rem;
   letter-spacing: 1px;
-  margin: 0.6rem;
+  padding: 0;
+  margin: 0;
   text-shadow: 
                -1px -1px 0px #202020, 
                -1px 1px 0px #202020,                    
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
   color: ${({theme}) => theme.colors.light};
+
+  ${media.greaterThan("large")`
+    font-size: 2rem;
+  `}
 `
 export const LastUpdate = styled.h3`
   font-size: 1.6rem;
-  margin: 0.6rem;
   letter-spacing: 1px;
+  padding: 0;
+  margin: 0;
   text-shadow: 
                -1px -1px 0px #202020, 
                -1px 1px 0px #202020,                    
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
   color: ${({theme}) => theme.colors.light};
+
+  ${media.greaterThan("large")`
+    font-size: 2rem;
+  `}
 `
 
 export const ContainerInformation = styled.div`
@@ -107,9 +128,16 @@ export const ContainerInformation = styled.div`
   border: 1px solid gray;
   border-radius: 0.2rem;
   
+  ${media.greaterThan("large")`
+    padding: 0.4rem;
+  `}
 `
 
 export const EventInformation = styled.span`
   font-size: 1.1rem;
   color: ${({theme}) => theme.colors.dark};
+
+  ${media.greaterThan("large")`
+    font-size: 1.4rem;
+  `}
 `

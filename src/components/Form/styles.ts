@@ -18,6 +18,10 @@ export const Form = styled.form`
   ${media.greaterThan("medium")`
     width: 22rem;
   `}
+
+  ${media.greaterThan("large")`
+    width: 23rem;
+  `}
 `
 
 export const SearchField = styled.input`
@@ -26,6 +30,10 @@ export const SearchField = styled.input`
   border: none;
   width: 85%;
   -webkit-appearance: none;
+
+  ${media.greaterThan("large")`
+    font-size: 1.4rem
+  `}
 `
 
 export const FormButton = styled.button`
@@ -42,6 +50,10 @@ export const FormButton = styled.button`
     transition: all 500ms;
     color: ${({theme}) => theme.colors.dark};
     font-size: 1.5rem;
+
+    ${media.greaterThan("large")`
+      font-size: 2rem
+    `}
 
     &:hover {
       color: ${({theme}) => theme.colors.marvel_red};

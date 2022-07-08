@@ -13,6 +13,15 @@ export const HeaderContainer = styled.header`
 
   ${media.greaterThan("medium")`
     height: 80vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+  `}
+
+  ${media.greaterThan("large")`
+    height: 85vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    padding: 1.5rem;
   `}
 `
 
@@ -29,6 +38,11 @@ export const Logo = styled.img`
   ${media.greaterThan("medium")`
     width: 6rem;
     margin-right: 2rem;
+  `}
+
+  ${media.greaterThan("large")`
+    width: 8rem;
+    margin-right: 3rem;
   `}
 `
 
@@ -49,6 +63,10 @@ export const Option = styled.a`
     ${media.greaterThan("medium")`
       margin-right: 2rem;
     `}
+
+    ${media.greaterThan("large")`
+      margin-right: 3rem;
+    `}
   }
 `
 
@@ -58,6 +76,10 @@ export const TextOption = styled.span`
 
   ${media.greaterThan("medium")`
     font-size: 1.7rem;
+  `}
+
+  ${media.greaterThan("large")`
+    font-size: 2.1rem;
   `}
 `
 
@@ -69,6 +91,10 @@ export const UndelineDecorationRed = styled.div`
 
   ${media.greaterThan("medium")`
     width: 1.5rem;
+  `}
+
+  ${media.greaterThan("large")`
+    width: 2rem;
   `}
 
   ${Option}:hover & {
@@ -86,6 +112,10 @@ export const UndelineDecorationBlue = styled.div`
     width: 1.5rem;
   `}
 
+  ${media.greaterThan("large")`
+    width: 2rem;
+  `}
+
   ${Option}:hover & {
     width: 100%;
   }
@@ -99,6 +129,10 @@ export const UndelineDecorationOrange = styled.div`
 
   ${media.greaterThan("medium")`
     width: 1.5rem;
+  `}
+
+  ${media.greaterThan("large")`
+    width: 2rem;
   `}
 
   ${Option}:hover & {
@@ -121,6 +155,10 @@ export const TextContent = styled.h1`
   ${media.greaterThan("medium")`
     font-size: 3rem;
   `}
+
+  ${media.greaterThan("large")`
+    font-size: 3.5rem;
+  `}
 `
 export const AnimationContainer = styled.div`
   //TODO: implementar animação
@@ -128,5 +166,9 @@ export const AnimationContainer = styled.div`
 
   ${media.greaterThan("medium")`
     width: 20rem;
+  `}
+
+  ${media.greaterThan("large")`
+    width: 32rem;
   `}
 `

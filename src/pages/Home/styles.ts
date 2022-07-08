@@ -15,6 +15,10 @@ export const Grid = styled.div`
   ${media.greaterThan("medium")`
     grid-template-columns: repeat(2, 1fr);
   `}
+
+  ${media.greaterThan("large")`
+    grid-template-columns: repeat(3, 1fr);
+  `}
 `
 
 // EVENTS SECTION
@@ -29,9 +33,14 @@ export const Events = styled.section`
   transition: all 500ms;
 
   ${media.greaterThan("medium")`
-    min-height: 80vh;
+    min-height: 90vh;
     margin-top: -35vh;
     padding: 15rem 1.2rem;
+  `}
+
+  ${media.greaterThan("large")`
+    min-height: 80vh;
+    padding: 19rem 1.2rem;
   `}
 `
 
@@ -52,6 +61,10 @@ export const TitleEventsSection = styled.h2`
   ${media.greaterThan("medium")`
     font-size: 2.5rem;
   `}
+
+  ${media.greaterThan("large")`
+    font-size: 3rem;
+  `}
 `
 
 // CHARACTERS SECTION
@@ -68,8 +81,13 @@ export const Characters = styled.section`
 
   & > * {
         transform: skewY(-20deg);
+
         ${media.greaterThan("medium")`
           transform: skewY(-10deg);
+        `}
+
+        ${media.greaterThan("large")`
+          transform: skewY(-5deg);
         `}
     }
 
@@ -77,6 +95,12 @@ export const Characters = styled.section`
     min-height: 80vh;
     margin-top: -30vh;
     transform: skewY(10deg);
+  `}
+
+  ${media.greaterThan("large")`
+    min-height: 90vh;
+    margin-top: -30vh;
+    transform: skewY(5deg);
   `}
 `
 
@@ -97,6 +121,10 @@ export const TitleCharacterSection = styled.h2`
   ${media.greaterThan("medium")`
     font-size: 2.5rem;
   `}
+
+  ${media.greaterThan("large")`
+    font-size: 3rem;
+  `}
 `
 
 // CREATORS SECTION
@@ -111,7 +139,13 @@ export const Creators = styled.section`
 
   ${media.greaterThan("medium")`
     min-height: 80vh;
+    padding: 15rem 1.2rem;
     margin-top: -30vh;
+  `}
+
+  ${media.greaterThan("large")`
+    min-height: 90vh;
+    padding: 19rem 1.2rem;
   `}
 
 `
@@ -132,5 +166,9 @@ export const TitleCreatorsSection = styled.h2`
   
   ${media.greaterThan("medium")`
     font-size: 2.5rem;
+  `}
+
+  ${media.greaterThan("large")`
+    font-size: 3rem;
   `}
 `

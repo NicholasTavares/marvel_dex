@@ -7,6 +7,10 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${media.greaterThan("large")`
+    height: 14rem;
+  `}
 `
 
 export const FooterCopyrightContainer = styled.div`
@@ -24,6 +28,10 @@ export const FooterCopyright = styled.span`
   
   ${media.greaterThan("medium")`
     font-size: 1.3rem;
+  `}
+
+  ${media.greaterThan("large")`
+    font-size: 1.5rem;
   `}
 `
 
