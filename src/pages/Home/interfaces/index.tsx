@@ -65,9 +65,30 @@ export interface ICharactersResponse {
   urls: IURL[];
 }
 
-export interface IParams {
+export interface IParamsCharacters {
   orderBy: string;
   limit: number;
   offset: number;
   nameStartsWith?: string;
+}
+
+export interface IEventsResponse {
+  characters: {
+    available: number;
+  };
+  collectionURI: string;
+  comics: {
+    available: number;
+  };
+  creators: {
+    available: number;
+  };
+  description: string;
+  id: number;
+  modified: string;
+  thumbnail: {
+    extension: string;
+    path: string;
+  };
+  title: string;
 }
