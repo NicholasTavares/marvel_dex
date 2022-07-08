@@ -32,10 +32,11 @@ export const OptionsContainer = styled.nav`
   align-items: center;
 `
 
-export const Option = styled.div`
+export const Option = styled.a`
   cursor: pointer;
   flex-direction: column;
   justify-content: left;
+  text-decoration: none;
 
   &:not(:last-child){
     margin-right: 1rem;

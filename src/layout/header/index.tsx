@@ -21,11 +21,11 @@ const Header: React.FunctionComponent = () => {
       <HeaderContent>
         <Logo src={logo} />
         <OptionsContainer>
-          <Option>
+          <Option href="#characters-events">
             <TextOption>Events</TextOption>
             <UndelineDecorationBlue />
           </Option>
-          <Option>
+          <Option href="#characters-section">
             <TextOption>Characters</TextOption>
             <UndelineDecorationRed />
           </Option>
