@@ -4,6 +4,7 @@ import CreatorCard from "../../components/CreatorCard";
 import EventCard from "../../components/EventCard";
 import FormSearch from "../../components/Form";
 import Pagination from "../../components/Pagination";
+import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 import { api } from "../../services/api";
 import {
@@ -156,6 +157,7 @@ const Home: React.FunctionComponent = () => {
             ))}
         </Grid>
       </Creators>
+      <Footer />
     </HomeContainer>
   );
 };
