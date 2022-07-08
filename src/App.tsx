@@ -8,9 +8,7 @@ const App: React.FunctionComponent = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div className="App">
-        <Home />
-      </div>
+      <Home />
     </ThemeProvider>
   );
 };
