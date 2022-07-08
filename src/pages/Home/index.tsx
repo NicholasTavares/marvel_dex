@@ -34,7 +34,7 @@ const Home: React.FunctionComponent = () => {
   const [creators, setCreators] = React.useState<ICreatorsResponse[]>([]);
   const [itemOffset, setItemOffset] = React.useState<number>(0);
   const [text, setText] = React.useState<string>("");
-  const LIMIT = 10;
+  const LIMIT = 12;
 
   React.useEffect(() => {
     async function getCharacters() {
@@ -70,7 +70,7 @@ const Home: React.FunctionComponent = () => {
         .get(`/creators`, {
           params: {
             limit: LIMIT,
-            modifiedSince: "2022",
+            orderBy: "-modified",
           },
         })
         .then((response) => {
