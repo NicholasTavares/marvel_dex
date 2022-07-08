@@ -48,6 +48,8 @@ export const CardBack = styled.div<IBackground>`
   background-position-y: 32%;
   background-position-x: 10%;
   background-size: cover;
+  filter: grayscale(100%);
+  background-blend-mode: saturation;
 
   height: 100%;
   width: 100%;

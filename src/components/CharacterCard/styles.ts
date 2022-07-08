@@ -21,8 +21,6 @@ export const CardFront = styled.div<IBackground>`
   background-size: cover;
   background-position-y: 32%;
   background-position-x: 10%;
-  filter: grayscale(100%);
-  background-blend-mode: saturation;
 
   height: 100%;
   width: 100%;
