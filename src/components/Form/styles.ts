@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import media from "styled-media-query";
+
+export const FormContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: left;
+`
 
 export const Form = styled.form`
   display: flex;
@@ -6,6 +13,11 @@ export const Form = styled.form`
   margin-bottom: 2rem;
   background-color: ${({theme}) => theme.colors.light};
   padding: 0.2rem;
+  width: 100%;
+
+  ${media.greaterThan("medium")`
+    width: 22rem;
+  `}
 `
 
 export const SearchField = styled.input`

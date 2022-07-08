@@ -21,6 +21,7 @@ import {
   HomeContainer,
   TitleCharacterSection,
   TitleCharacterSectionContainer,
+  TitleCreatorsSection,
   TitleCreatorsSectionContainer,
   TitleEventsSection,
   TitleEventsSectionContainer,
@@ -73,6 +74,7 @@ const Home: React.FunctionComponent = () => {
           },
         })
         .then((response) => {
+          console.log(response.data.data);
           setCreators(response.data.data.results);
         })
         .catch((err) => console.log(err));
@@ -140,7 +142,7 @@ const Home: React.FunctionComponent = () => {
       </Characters>
       <Creators id="creators-section">
         <TitleCreatorsSectionContainer>
-          <TitleCharacterSection>Creators</TitleCharacterSection>
+          <TitleCreatorsSection>Creators</TitleCreatorsSection>
         </TitleCreatorsSectionContainer>
         <Grid>
           {creators.length > 0 &&

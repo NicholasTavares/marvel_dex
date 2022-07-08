@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const StyledPaginateContainer = styled.div`
   .pagination {
@@ -9,6 +10,13 @@ export const StyledPaginateContainer = styled.div`
     padding: 0;
     font-size: 1.2rem;
     list-style-type: none;
+
+    ${media.greaterThan("medium")`
+      width: 22rem;
+      margin-top: 3rem;
+      margin-left: auto;
+      margin-right: auto;
+    `}
   }
 
   .page-button{
@@ -20,6 +28,11 @@ export const StyledPaginateContainer = styled.div`
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
+
+    ${media.greaterThan("medium")`
+      height: 2.2rem;
+      width: 2.2rem;
+    `}
   }
   .prev-button > a{
     cursor: pointer;
@@ -31,6 +44,11 @@ export const StyledPaginateContainer = styled.div`
     border-radius: 50%;
     color: ${({theme}) => theme.colors.dark};
     background-color: ${({theme}) => theme.colors.light};
+
+    ${media.greaterThan("medium")`
+      height: 2.4rem;
+      width: 2.4rem;
+    `}
   }
 
   .next-button > a{
@@ -43,6 +61,11 @@ export const StyledPaginateContainer = styled.div`
     border-radius: 50%;
     color: ${({theme}) => theme.colors.dark};
     background-color: ${({theme}) => theme.colors.light};
+
+    ${media.greaterThan("medium")`
+      height: 2.4rem;
+      width: 2.4rem;
+    `}
   }
 
   .active-link > a {

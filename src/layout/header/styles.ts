@@ -25,6 +25,11 @@ export const HeaderContent = styled.div`
 export const Logo = styled.img`
   width: 5rem;
   margin-right: 1rem;
+
+  ${media.greaterThan("medium")`
+    width: 6rem;
+    margin-right: 2rem;
+  `}
 `
 
 export const OptionsContainer = styled.nav`
@@ -40,12 +45,20 @@ export const Option = styled.a`
 
   &:not(:last-child){
     margin-right: 1rem;
+
+    ${media.greaterThan("medium")`
+      margin-right: 2rem;
+    `}
   }
 `
 
 export const TextOption = styled.span`
   color: ${({theme}) => theme.colors.light};
   font-size: 1.4rem;
+
+  ${media.greaterThan("medium")`
+    font-size: 1.7rem;
+  `}
 `
 
 export const UndelineDecorationRed = styled.div`
@@ -53,6 +66,10 @@ export const UndelineDecorationRed = styled.div`
   width: 1rem;
   height: 0.2rem;
   background-color: ${({theme}) => theme.colors.marvel_red};
+
+  ${media.greaterThan("medium")`
+    width: 1.5rem;
+  `}
 
   ${Option}:hover & {
     width: 100%;
@@ -65,6 +82,10 @@ export const UndelineDecorationBlue = styled.div`
   height: 0.2rem;
   background-color: ${({theme}) => theme.colors.marvel_blue};
 
+  ${media.greaterThan("medium")`
+    width: 1.5rem;
+  `}
+
   ${Option}:hover & {
     width: 100%;
   }
@@ -75,6 +96,10 @@ export const UndelineDecorationOrange = styled.div`
   width: 1rem;
   height: 0.2rem;
   background-color: ${({theme}) => theme.colors.marvel_orange};
+
+  ${media.greaterThan("medium")`
+    width: 1.5rem;
+  `}
 
   ${Option}:hover & {
     width: 100%;
@@ -92,7 +117,16 @@ export const TextContent = styled.h1`
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
   color: ${({theme}) => theme.colors.light};
+
+  ${media.greaterThan("medium")`
+    font-size: 3rem;
+  `}
 `
 export const AnimationContainer = styled.div`
+  //TODO: implementar animação
   width: 8rem;
+
+  ${media.greaterThan("medium")`
+    width: 20rem;
+  `}
 `

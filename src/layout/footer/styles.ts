@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const FooterContainer = styled.footer`
   height: 10rem;
@@ -20,6 +21,10 @@ export const FooterCopyright = styled.span`
   display: inline-block;
   font-size: 1rem;
   color: ${({theme}) => theme.colors.light};
+  
+  ${media.greaterThan("medium")`
+    font-size: 1.3rem;
+  `}
 `
 
 export const MarvelLink = styled.a`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const HomeContainer = styled.main`
   display: flex;
@@ -10,6 +11,10 @@ export const Grid = styled.div`
   grid-gap: 1rem;
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(1, 1fr);
+
+  ${media.greaterThan("medium")`
+    grid-template-columns: repeat(2, 1fr);
+  `}
 `
 
 // EVENTS SECTION
@@ -22,6 +27,12 @@ export const Events = styled.section`
   flex-direction: column;
   background-color: ${({theme}) => theme.colors.marvel_blue};
   transition: all 500ms;
+
+  ${media.greaterThan("medium")`
+    min-height: 80vh;
+    margin-top: -35vh;
+    padding: 15rem 1.2rem;
+  `}
 `
 
 export const TitleEventsSectionContainer = styled.div`
@@ -37,6 +48,10 @@ export const TitleEventsSection = styled.h2`
                -1px 1px 0px #202020,                    
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
+
+  ${media.greaterThan("medium")`
+    font-size: 2.5rem;
+  `}
 `
 
 // CHARACTERS SECTION
@@ -53,7 +68,16 @@ export const Characters = styled.section`
 
   & > * {
         transform: skewY(-20deg);
+        ${media.greaterThan("medium")`
+          transform: skewY(-10deg);
+        `}
     }
+
+  ${media.greaterThan("medium")`
+    min-height: 80vh;
+    margin-top: -30vh;
+    transform: skewY(10deg);
+  `}
 `
 
 export const TitleCharacterSectionContainer = styled.div`
@@ -69,6 +93,10 @@ export const TitleCharacterSection = styled.h2`
                -1px 1px 0px #202020,                    
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
+
+  ${media.greaterThan("medium")`
+    font-size: 2.5rem;
+  `}
 `
 
 // CREATORS SECTION
@@ -80,6 +108,11 @@ export const Creators = styled.section`
   justify-content: center;
   flex-direction: column;
   background-color: ${({theme}) => theme.colors.marvel_orange};
+
+  ${media.greaterThan("medium")`
+    min-height: 80vh;
+    margin-top: -30vh;
+  `}
 
 `
 
@@ -96,4 +129,8 @@ export const TitleCreatorsSection = styled.h2`
                -1px 1px 0px #202020,                    
                 1px -1px 0px #202020,                  
                 1px 0px 0px #202020;
+  
+  ${media.greaterThan("medium")`
+    font-size: 2.5rem;
+  `}
 `
