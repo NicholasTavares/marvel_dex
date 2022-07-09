@@ -12,12 +12,16 @@ export const Grid = styled.div`
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(1, 1fr);
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('small')`
     grid-template-columns: repeat(2, 1fr);
   `}
 
-  ${media.greaterThan("large")`
+  ${media.greaterThan('medium')`
     grid-template-columns: repeat(3, 1fr);
+  `}
+
+  ${media.greaterThan("large")`
+    grid-template-columns: repeat(4, 1fr);
   `}
 `
 
