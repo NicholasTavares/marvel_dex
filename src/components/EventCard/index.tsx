@@ -38,11 +38,11 @@ const EventCard: React.FunctionComponent<IEvent> = ({
           <LastUpdate>{date.getMonth() + "/" + date.getFullYear()}</LastUpdate>
         </ContainerTitle>
         <ContainerInformation>
-          <EventInformation>Comics count: ${comics_count}</EventInformation>
+          <EventInformation>Comics count: {comics_count}</EventInformation>
           <EventInformation>
-            Characters count: ${characters_count}
+            Characters count: {characters_count}
           </EventInformation>
-          <EventInformation>Creators count: ${creators_count}</EventInformation>
+          <EventInformation>Creators count: {creators_count}</EventInformation>
         </ContainerInformation>
       </CardFront>
 
